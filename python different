@@ -25,3 +25,16 @@ def stray(arr):
     return min(arr, key=arr.count)           
 
 __________________________________________________________________
+
+число представить в виде строки из суммы чисел
+
+def expanded_form(num):
+    output = []
+    n=0
+    while num >= 1:
+        output.append(num%10 * 10**n)
+        num = num//10
+        n=n+1
+    output_rev = output[::-1]
+    
+    return ' + '.join(str(e) for e in (filter(lambda x: x > 0, output_rev) ))
