@@ -1,0 +1,27 @@
+description
+You are given an odd-length array of integers, in which all of them are the same, except for one single number.
+Complete the method which accepts such an array, and returns that single different number.
+The input array will always be valid! (odd-length >= 3)
+Нахождение уникального символа в массиве
+
+мое решение
+def stray(arr):
+    output = []
+    for i in range(len(arr)):
+        if arr[i]!=arr[len(arr)-1]:
+            output.append(arr[i])
+    if len(output)>1:
+        return arr[len(arr)-1]
+    else:
+        return output[0]
+        
+короткие решения
+def stray(arr):
+    for x in arr:
+        if arr.count(x) == 1:
+            return x
+            
+def stray(arr):
+    return min(arr, key=arr.count)           
+
+__________________________________________________________________
